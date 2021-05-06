@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat App</title>
+    <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="../css/chats.css">
+</head>
+<body>
+    <h1 id='heading'>chat App</h1>
+    <div id="userlist">
+        <div>
+            <h1 id='seHead'>Users</h1>
+            <button onclick="Close()" id='close'><image src='../images/close.svg'></image></button>
+        </div>
+        <ul id='list'>
+        </ul>
+    </div>
+    <button id='toShowUser' onclick="List()"><image id='img2' src='../images/format.svg'></image>
+    </button>
+    <div id='message1'></div>
+    <div id="inputBox">
+        <textarea placeholder='Type your text' id="b1"></textarea>
+        <button  id="send" onclick='send()'><image src="../images/send.svg"></image></button>
+    </div>
+     <button id="sendLocation" onclick='sendLocation()'><image id="img3" src='../images/location.svg'></image></button> 
+
+
+    <script id='user-list-template' type='text/html'>
+       <li>{{username}}</li>
+    </script>
+    <script id="message-template" type='text/html'>
+         <div class='messages' style='clear:both' >
+            <span class='username'>{{username}}</span> 
+            <p class='message'>{{message}}</p>
+             <span class='time'>{{time}}</span>
+            
+         </div>   
+    </script>
+    <script id="location-template" type='text/html'>
+        <div  class='messages' style='clear:both'>
+            <span class='username'>{{username}}</span>
+            <p class='message'><a id='link' href="{{url}}" target="_blank">{{username1}} current Location</a></p>
+            <span class='time'>{{time}}</span>
+        </div>   
+   </script>
+    <script src="https://unpkg.com/mustache@4.2.0/mustache.js"></script>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src='/js/chat.js'></script>
+</body>
+</html>

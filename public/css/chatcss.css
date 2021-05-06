@@ -1,0 +1,33 @@
+body{
+    background-color: #0b1421;
+}
+h1{
+    color: rgb(0 230 251);
+    font-size: 36px;
+    background: linear-gradient(45deg, #215d39,#4c15ff);
+    border-radius: 6px;
+}
+label{
+    color:rgb(0, 214, 251);
+    font-size: 21px;
+   
+}
+input{
+    font-size: 18px;
+    background: #0b1421;
+    border: none;
+    border-bottom: 2px solid skyblue;
+    color:white;
+    font-family: system-ui;
+}
+#submit{
+    width: 100%;
+    border: none;
+    color: #00afff;
+    background: linear-gradient(45deg, red,#ca18b6, transparent);
+    font-size: 23px;
+    border-radius: 10px;
+}
+
+form
+{display: block;position: fixed;top: 12%;left: 13%;margin: 0px;padding: 0px;}
