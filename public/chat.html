@@ -9,24 +9,26 @@
     <link rel="stylesheet" href="../css/chats.css">
 </head>
 <body>
-    <h1 id='heading'>chat App</h1>
-    <div id="userlist">
-        <div>
-            <h1 id='seHead'>Users</h1>
-            <button onclick="Close()" id='close'><image src='../images/close.svg'></image></button>
+    <div id='top'>
+        <h1 id='heading'>chat App</h1>
+        <div id="userlist">
+            <div>
+                <h1 id='seHead'>Users</h1>
+                <button onclick="Close()" id='close'><image src='../images/close.svg'></image></button>
+            </div>
+            <ul id='list'>
+            </ul>
         </div>
-        <ul id='list'>
-        </ul>
+        <button id='toShowUser' onclick="List()"><image id='img2' src='../images/format.svg'></image> </button>
+        <button id="sendLocation" onclick='sendLocation()'><image id="img3" src='../images/location.svg'></image></button> 
     </div>
-    <button id='toShowUser' onclick="List()"><image id='img2' src='../images/format.svg'></image>
-    </button>
-    <div id='message1'></div>
+
+    <div  style="margin-top:67px;overflow-y:scroll;height: 33rem;" id='message1'></div>
     <div id="inputBox">
         <textarea placeholder='Type your text' id="b1"></textarea>
         <button  id="send" onclick='send()'><image src="../images/send.svg"></image></button>
     </div>
-     <button id="sendLocation" onclick='sendLocation()'><image id="img3" src='../images/location.svg'></image></button> 
-
+    
 
     <script id='user-list-template' type='text/html'>
        <li>{{username}}</li>

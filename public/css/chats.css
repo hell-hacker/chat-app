@@ -4,12 +4,19 @@ body{
     background-repeat: no-repeat;
     background: linear-gradient(to right, #141a25,#010102e6);
 }
+#top{
+    height: 59px;
+    background: black;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
 #sendLocation{
     position: absolute;
     right: 0px;
     top: 11px;
     border: none;
-    background: #141a25;
+    background: linear-gradient(45deg, black, black);
 }
 #img3{
     height:30px
@@ -34,14 +41,13 @@ body{
 }
 #heading{
     margin: 0px;
-    margin-bottom: 20px;
     padding: 0px;
     text-align: center;
     font-size: 42px;
     color: #e6226a;
     font-family: sans-serif;
 }
-::-webkit-scrollbar {
+\ {
     display: none;
 }
 
@@ -64,7 +70,7 @@ padding-right: 8px;
     border: none;
     border-radius: 18px;
     position: fixed;
-    right: 10px;
+    right: 2px;
     height: 46px;
     width: 46px;
 }
@@ -148,7 +154,7 @@ ul{
 #toShowUser{
     position: absolute;
     top: 12px;
-    background: #141a25;
+    background: black;
     border: none;
 }
 #img2{
