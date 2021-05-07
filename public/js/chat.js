@@ -30,10 +30,23 @@ function is_url(str)
         }
 }
 $messages=document.querySelector('#message1');
-const autoscroll=()=>{
-      const $newMessage= $messages.lastElementChild;
+$inputBox=document.querySelector('#inputBox');
 
-      const newMessageStyles=getComputedStyle($newMessage);
+document.getElementById('message1').style.height=window.innerHeight-134+"px";
+console.log(document.getElementById('message1').style.height);
+const autoscroll=()=>{
+     
+     const $newMessage= $messages.lastElementChild;
+     
+      const inputbox=$inputBox.offsetTop;
+      const totalheight=$newMessage.offsetHeight+$newMessage.offsetTop;
+      if(totalheight+20>inputbox){
+           $messages.scrollTop=totalheight-(inputbox-20);
+           console.log(totalheight-(inputbox-20));
+       }
+      console.log(inputbox+" "+totalheight+" "+ $messages.scrollTop);
+      /*const newMessageStyles=getComputedStyle($newMessage);
+      console.log(newMessageStyles);
       const newMessageMargin=parseInt(newMessageStyles.marginBottom);
       const newMessageHeight=$newMessage.offsetHeight+newMessageMargin;
 
@@ -41,12 +54,12 @@ const autoscroll=()=>{
 
       const containerHeight=$messages.scrollHeight;
       const scrollOffset=$messages.scrollTop+visibleHeight;
-
+      
       if(containerHeight-newMessageHeight<=scrollOffset)
       {
            $messages.scrollTop=$messages.scrollHeight;
-      }
-      console.log($messages.scrollTop);
+      }*/
+    //  console.log($messages.scrollTop);
 }
 function List(){
           socket.emit('userslist',(userlist)=>{
@@ -103,6 +116,7 @@ socket.on('sendLocation',(url,username)=>{
           document.getElementsByClassName('messages')[count].style.background='linear-gradient( 90deg , #b12056,#1d1d50)';
      }
      count++; 
+     autoscroll();
      // console.log(document.getElementById('message'));                 
 })
 
@@ -129,7 +143,7 @@ function send(){
       socket.emit('requestMessage',value,(confirmMessage)=>{
           console.log(confirmMessage);
           document.getElementById('send').removeAttribute('disabled');
-          document.getElementById('b1').focus();
+          //document.getElementById('b1').focus();
           document.getElementById('b1').value='';
      });
 }
