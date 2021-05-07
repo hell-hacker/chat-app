@@ -63,14 +63,14 @@ const autoscroll=()=>{
 }
 function List(){
           socket.emit('userslist',(userlist)=>{
-                         console.log(userlist);     
+                         console.log(userlist);    
+                         document.getElementById('list').innerHTML=''; 
                for(var i=0;i<userlist.length;i++){
                     let usersTemplate=document.getElementById('user-list-template').innerHTML;    
                     
                     const html=Mustache.render(usersTemplate,{
                          username:userlist[i]['username']
                     });
-                    document.getElementById('list').innerHTML='';
                    document.getElementById('list').insertAdjacentHTML('beforeend',html);
                }
           })
