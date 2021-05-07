@@ -114,9 +114,9 @@ overflow:hidden
     background: linear-gradient(
 45deg
 , #222c6d, #1f3175ed);
-    height: 100%;
+  
     box-sizing: border-box;
-    overflow: auto;
+    
     z-index: 1;
 }
 #close{
