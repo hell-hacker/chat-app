@@ -113,10 +113,8 @@ overflow:hidden
     top: 0px;
     background: linear-gradient(
 45deg
-, #222c6d, #1f3175ed);
-  
+, #1b1a27, #070c0aed);
     box-sizing: border-box;
-    
     z-index: 1;
 }
 #close{
@@ -132,7 +130,7 @@ overflow:hidden
     border-radius: 25px;
 }
 #seHead{
-    color: #5af174;
+    color: crimson;
     font-family: sans-serif;
 }
 li{

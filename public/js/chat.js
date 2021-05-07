@@ -70,7 +70,7 @@ function List(){
                     const html=Mustache.render(usersTemplate,{
                          username:userlist[i]['username']
                     });
-               
+                    document.getElementById('list').innerHTML='';
                    document.getElementById('list').insertAdjacentHTML('beforeend',html);
                }
           })
